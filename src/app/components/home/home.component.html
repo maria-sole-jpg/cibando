@@ -1,0 +1,10 @@
+
+<app-carousel></app-carousel>
+
+<div class="container-title"> <br>
+  <h1 [ngClass]="evidenziato ? 'testoEvidenziato' : '' " (click)="onEvidenziazione()" style="cursor: pointer">Benvenuti in Cibando!</h1>
+  <p [ngStyle]="{'background-color' : evidenziato ? 'yellow' : 'white'}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae rerum rem voluptatibus asperiores voluptas iusto quia facilis, ab repellat amet laudantium a esse, voluptates at officiis deleniti? Veritatis cum incidunt illo reprehenderit distinctio consequatur at cupiditate hic repellat eligendi harum, unde temporibus, facilis explicabo. Officiis eaque expedita aperiam obcaecati voluptas!</p>
+</div>
+
+<h2>Ultime ricette</h2>
+<app-recipe-card [recipes]="ricette"></app-recipe-card>

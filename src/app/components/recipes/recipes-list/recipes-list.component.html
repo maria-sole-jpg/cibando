@@ -1,0 +1,3 @@
+<h2>Le nostre ricette</h2> - {{titoloRicevuto}}
+<app-recipe-card [recipes]="ricette" (messaggio)="riceviTitolo($event)"></app-recipe-card> <!--comunicazione padre figlio-->
+<!-- Gli ho detto che dentro recipes devo mettere le ricette del padre. Di solito si usano gli stessi nomi, ma  per non confonderci per ora sono diversi-->
