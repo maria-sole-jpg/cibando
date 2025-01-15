@@ -8,3 +8,38 @@
 
 <h2>Ultime ricette</h2>
 <app-recipe-card [recipes]="ricette"></app-recipe-card>
+<button (click)="openModal(modaleUno,'345','insalata')">ELIMINA PRODOTTO</button>
+<button (click)="openModal(modaleRegistrazione)">REGISTRA PRODOTTO</button>
+
+<!-- MODALE UNO -->
+<ng-template #modaleUno let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Elimina prodotto</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>Sei sicuro di voler eliminare il prodotto num {{this.idModale}} <strong>nome</strong> {{this.nomeModale}} ?</p> <!-- &hellip; SONO PUNTINIPUNTINI-->
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.dismiss('')">ANNULLA</button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('')">CONFERMA</button>
+  </div>
+</ng-template>
+
+<!-- MODALE DUE -->
+<ng-template #modaleRegistrazione let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Registrazione avvenuta con successo</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+    <h3>Ecco i tuoi dati:</h3>
+    <ul>
+      <li>Nome: {{this.datiRegistrazione['nome']}}</li> <!-- [''] non è tipizzato -->
+      <li>Email: {{this.datiRegistrazione['email']}}</li>
+    </ul>
+	</div>
+	<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('')">CHIUDI</button>
+	</div>
+</ng-template>

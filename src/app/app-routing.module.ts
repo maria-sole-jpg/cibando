@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 // devo importare i componenti che voglio compaiano
 
 const routes: Routes = [
@@ -14,8 +15,9 @@ const routes: Routes = [
     {path: 'dettaglio/:title/:_id', component: DetailComponent},
     {path: 'dettaglio/:_id', component: DetailComponent},
     {path: '', component: RecipesListComponent, pathMatch:'full'}
-]},
-{path:'**', redirectTo: 'home'}
+  ]},
+  {path: 'registrazione', component: RegistrationComponent},
+  {path:'**', redirectTo: 'home'}
 ];
 //rotte
 

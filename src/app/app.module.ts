@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,10 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { RecipeCardComponent } from './components/shared/recipe-card/recipe-card.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
+import { DividerModule } from 'primeng/divider';
+import { PasswordModule } from 'primeng/password';
+import { AnimateModule } from 'primeng/animate';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,18 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
     HeaderComponent,
     RecipeCardComponent,
     DetailComponent,
-    RecipesListComponent
+    RecipesListComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DividerModule,
+    PasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent]
