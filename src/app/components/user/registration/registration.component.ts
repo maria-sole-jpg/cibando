@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Password } from 'primeng/password';
 import { UserService } from '../../../services/user.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-registration',
   standalone: false,
@@ -10,7 +12,8 @@ import { UserService } from '../../../services/user.service';
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent {
-
+  private router = inject(Router);
+ private userService = inject(UserService)
   form = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('',[Validators.email, Validators.required]),
@@ -20,13 +23,14 @@ export class RegistrationComponent {
   })
 
 
-  constructor(private userService:UserService) {
-  }
+// constructor(private userService:UserService) { }
 
   onSubmit(){
     console.log(this.form.value);
     const dati = {nome: this.form.controls.name.value, email: this.form.controls.email}
     this.userService.datiUtente.next('Ciao. Hai inserito i seguenti dati: ' + dati);
+    this.router.navigateByUrl('home'); //è esattamente il routerLink:
+    this.router.navigate(['home']); //routerLink fatto dentro la classe ^^ sono la stessa cosa
   }
 
   scriviInNome(e){
