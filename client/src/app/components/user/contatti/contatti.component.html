@@ -1,0 +1,52 @@
+<section class="container-mio" style="background-color: #ffffff;">
+  <div>
+      <h6 class="text">Contattaci!</h6>
+        <form [formGroup]="form"> <!-- (ngSubmit)="onSubmit()"  #f è il nome della reference. e gli posso anche dare un valore-->
+           <label class="form-label" class="text-mio">Nome</label>
+            <input type="text" class="form-control" name="name" formControlName="name" /> <!--(ngModelChange)="scriviInNome($event)" -->
+            <p class="is-danger" *ngIf="!form.get('name')?.valid && form.get('name').touched">
+              <br> Il campo nome è obbligatorio
+            </p>
+            <br>
+              <label class="form-label" class="text-mio">Email</label>
+              <input type="email" id="form3Example3c" class="form-control" name="email" formControlName="email"/>
+              <p class="is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">
+                <br>Il campo email è obbligatorio
+              </p>
+              <p class="is-danger" *ngIf="!form.get('email')?.valid && form.get('email').touched">
+                <br>Indirizzo email non valido
+              </p>
+              <br>
+
+              <label class="form-label" class="text-mio">Oggetto</label>
+              <p-password formControlName="oggetto" class="form-control" [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"/>
+              <p class="is-danger" *ngIf="form.controls.oggetto.hasError('required') && form.get('oggetto')?.touched">
+                <br>Il campo oggetto è obbligatorio
+              </p>
+              <br>
+              <label class="form-label" class="text-mio">Messaggio</label>
+              <input type="message"  class="form-control" style="height: 100px;" name="message" formControlName="inserireMessaggio"/> <!-- (ngModelChange)="comparaPassword($event)"-->
+              <p class="is-danger" *ngIf="!form.get('messaggio')?.valid && form.get('messaggio').touched">
+                <br>Il campo è obbligatorio
+              </p>
+              <!-- <p class="is-danger" *ngIf="isEqual === false"  (ngModel)="comparaPassword($event)">
+              Le password non corrispondono
+              </p> -->
+              <br>
+              <button [disabled]="!form.valid" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Registrati</button>
+
+              </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+               <img class="img-detail" src="assets/images/envelope.jpg" alt="Sample image">
+              </div>
+
+</section>
+
+<!--<div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1"> -->

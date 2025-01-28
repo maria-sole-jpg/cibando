@@ -1,0 +1,33 @@
+@import "../../../style/colori.scss";
+
+.container-cards{
+  display: flex;            /* Imposta il layout come flexbox */
+  flex-wrap: wrap;        /* Impedisce che le card vadano su più righe */
+  gap: 16px;                /* Spazio tra le card */
+  justify-content: center;
+  align-content: center;
+}
+
+
+.card {
+  width: 250px;
+  max-width: 100%;
+}
+
+.card-image{
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.card-text{
+  text-align: justify;
+}
+
+
+.card-title{
+  font-weight: bold;
+  font-size: 16px;
+  color: $primary-color-1;
+}

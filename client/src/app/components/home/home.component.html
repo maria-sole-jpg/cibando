@@ -1,0 +1,50 @@
+
+<app-carousel></app-carousel>
+
+<div class="container-title"> <br>
+  <h1 [ngClass]="evidenziato ? 'testoEvidenziato' : '' " (click)="onEvidenziazione()" style="cursor: pointer">Benvenuti in Cibando!</h1>
+  <p [ngStyle]="{'background-color' : evidenziato ? 'yellow' : 'white'}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae rerum rem voluptatibus asperiores voluptas iusto quia facilis, ab repellat amet laudantium a esse, voluptates at officiis deleniti? Veritatis cum incidunt illo reprehenderit distinctio consequatur at cupiditate hic repellat eligendi harum, unde temporibus, facilis explicabo. Officiis eaque expedita aperiam obcaecati voluptas!</p>
+</div>
+
+<h2>Ultime ricette</h2>
+<div id="container-cards">
+  <div class="container-card" *ngFor="let ricetta of ricette">
+    <app-recipe-card [recipe]="ricetta" [page]="'home'"></app-recipe-card> <!--comunicazione padre figlio   (messaggio)="riceviTitolo($event) -->
+    <!-- Gli ho detto che dentro recipes devo mettere le ricette del padre. Di solito si usano gli stessi nomi, ma  per non confonderci per ora sono diversi-->
+  </div>
+  <!-- <button (click)="openModal(modaleUno,'345','insalata')">ELIMINA PRODOTTO</button>
+<button (click)="openModal(modaleRegistrazione)">REGISTRA PRODOTTO</button>
+-->
+
+<!-- MODALE UNO -->
+<ng-template #modaleUno let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Elimina prodotto</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>Sei sicuro di voler eliminare il prodotto num {{this.idModale}} <strong>nome</strong> {{this.nomeModale}} ?</p> <!-- &hellip; SONO PUNTINIPUNTINI-->
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.dismiss('')">ANNULLA</button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('')">CONFERMA</button>
+  </div>
+</ng-template>
+
+<!-- MODALE DUE -->
+<ng-template #modaleRegistrazione let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Registrazione avvenuta con successo</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+    <h3>Ecco i tuoi dati:</h3>
+    <ul>
+      <li>Nome: {{this.datiRegistrazione['nome']}}</li> <!-- [''] non è tipizzato -->
+      <li>Email: {{this.datiRegistrazione['email']}}</li>
+    </ul>
+	</div>
+	<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('')">CHIUDI</button>
+	</div>
+</ng-template>

@@ -1,0 +1,18 @@
+<h2>Le nostre ricette . Size: {{size}} </h2> - {{titoloRicevuto}}
+<div id="container-cards">
+  <!-- <div class="container-card" *ngFor="let ricetta of ricette">
+    <app-recipe-card [recipe]="ricetta" (messaggio)="riceviTitolo($event)"></app-recipe-card> comunicazione padre figlio
+    Gli ho detto che dentro recipes devo mettere le ricette del padre. Di solito si usano gli stessi nomi, ma  per non confonderci per ora sono diversi
+  </div> -->
+  <div class="container-card" *ngFor="let ricetta of recipes$ | async | slice: (page * size) - size : page * size">
+  <app-recipe-card [recipe]="ricetta" (messaggio)="riceviTitolo($event)"></app-recipe-card>
+</div>
+
+<div class="card flex justify-content-center">
+  <p-paginator
+      (onPageChange)="onPageChange($event)"
+      [first]="first"
+      [rows]="size"
+      [totalRecords]="totaleRicette.length"
+      [rowsPerPageOptions]= " [2,4,6,8] "/>
+</div>

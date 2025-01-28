@@ -1,0 +1,15 @@
+#container-login {
+  width: 500px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.container-row{
+  margin-bottom: 15px;
+  height: 40ox;
+}
+
+:host ::ng-deep .p-inputtext {
+  border: 1px solid #dfdfdf !important;
+  width: 100% !important;
+}

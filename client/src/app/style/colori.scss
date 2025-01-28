@@ -1,0 +1,33 @@
+
+//colori principali
+$primary-color-1: #8e210b;
+$primary-color-2: white;
+
+//colori secondari
+$secondary-color-1: #3e0b;
+$secondary-color-2: rgb(18, 137, 187);
+
+//testi
+
+//scala di grigi
+$grey-1: #565655;
+$grey-2: #323232;
+$grey-3: #1c1c1c;
+$grey-4: #1a1a1a;
+
+.is-danger{
+  color:rgb(218, 10, 10);
+  font-size: small;
+  position: relative;
+  top: -10px;
+}
+
+.container-card
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 15px,
+}
+
