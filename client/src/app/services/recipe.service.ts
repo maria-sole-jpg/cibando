@@ -24,11 +24,19 @@ import { HttpClient } from '@angular/common/http';
   }
 
   addRecipe(recipe:any): Observable<any>{
-    return this.http.post<any>(`${this.apiBaseUrl}/`, recipe);
+    return this.http.post<any>(`${this.apiBaseUrl}/`, recipe)
   }
 
   removeRecipe(recipe:any){
-   return this.http.delete<any>(`${this.apiBaseUrl}/`, recipe);
+   return this.http.delete<any>(`${this.apiBaseUrl}/ricette/${recipe.id}`, recipe)
   }
-  
+
+  updateRecipe(recipe:any){
+    return this.http.put<any>(`${this.apiBaseUrl}/ricette/${recipe.id}`, recipe)
+  }
+
+  searchBar(recipe:any): Observable<any>{
+    return this.http.get<Recipe>(`${this.apiBaseUrl}/${recipe.title} || ${recipe.description}`)
+  }
+
 }

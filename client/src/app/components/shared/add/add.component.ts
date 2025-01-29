@@ -1,4 +1,4 @@
-import { RecipeService } from './../../../services/recipe.service';
+import { RecipeService } from '../../../services/recipe.service';
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -33,6 +33,6 @@ export class AddComponent {
     })
   }
 
-  
+
 
 }

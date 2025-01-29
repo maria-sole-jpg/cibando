@@ -34,4 +34,6 @@ export class HeaderComponent implements DoCheck{
     this.authService.logout();
     this.router.navigateByUrl('/login');
   }
+
+
 }

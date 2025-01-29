@@ -1,4 +1,4 @@
-<h2>Le nostre ricette . Size: {{size}} </h2> - {{titoloRicevuto}}
+<h2 class="title">Le nostre ricette</h2> - {{titoloRicevuto}} <!-- Size: {{size}} -->
 <div id="container-cards">
   <!-- <div class="container-card" *ngFor="let ricetta of ricette">
     <app-recipe-card [recipe]="ricetta" (messaggio)="riceviTitolo($event)"></app-recipe-card> comunicazione padre figlio
@@ -14,5 +14,5 @@
       [first]="first"
       [rows]="size"
       [totalRecords]="totaleRicette.length"
-      [rowsPerPageOptions]= " [2,4,6,8] "/>
+      [rowsPerPageOptions]=" [2,4,6,8] "/>
 </div>

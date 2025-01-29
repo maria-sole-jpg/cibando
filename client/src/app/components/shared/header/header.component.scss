@@ -10,10 +10,7 @@ header{
  }
 
  .ricerca{
-  display: flex;
-  align-self: self-start;
   border-radius: 0.6rem;
   border-style: hidden;
-  margin-left: 200%;
-  margin-top: 2%;
+  align-self: flex-end;
  }

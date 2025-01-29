@@ -19,6 +19,8 @@ import { PaginatorModule } from 'primeng/paginator';
 import { ButtonModule } from 'primeng/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateComponent } from './update/update.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     RecipesListComponent,
     RecipeCardComponent,
     DetailComponent,
-    AddComponent
+    AddComponent,
+    UpdateComponent,
+    SearchComponent
     ],
   imports: [
     CommonModule,

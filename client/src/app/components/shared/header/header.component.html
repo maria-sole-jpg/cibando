@@ -21,7 +21,7 @@
         </li>
 
         <li *ngIf="!authService.isLogged()">
-          <a class="nav-link" routerLink="registrazione">Registrazione</a>
+          <a class="nav-link" routerLink="/registrazione">Registrazione</a>
         </li>
 
         <li  *ngIf="authService.isLogged()">
@@ -37,7 +37,9 @@
           <i> Ciao {{user?.name}} - Account - <a (click)="logout()">Esci</a></i>
         </li>
       -->
-        <input type="search" class="ricerca"><a class="nav-item nav-link"><i class="pi pi-search" style="font-size: 1rem"></i></a>
+        <li>
+          <a class="nav-item nav-link"><input type="search" class="ricerca"><i class="pi pi-search"></i></a>
+          </li>
       </div>
     </div>
   </nav>

@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'}, //posso anche mettere il component senza reindirizzarlo
   {path: 'home', component: HomeComponent}, //percorso, ossia il nome del link
   {path: 'contatti', component: ContattiComponent},
-  {path: 'login', loadChildren: () => import("./components/user/user.module").then(module => module.UserModule)},
+  {path: 'registrazione', loadChildren: () => import("./components/user/user.module").then(module => module.UserModule)},
   {path: 'ricette', loadChildren: () => import("./components/recipes/recipes.module").then(module => module.RecipesModule)},
   {path:'**', redirectTo: 'home'}
 ];

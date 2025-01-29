@@ -56,9 +56,10 @@ export class RecipeCardComponent {
   onSubmit(){
     this.recipeService.removeRecipe(this.form.value).subscribe({
       next: res => {
-        this.router.navigateByUrl('ricette')
+        this.router.navigateByUrl('home')
       },
       error: (e) => console.log(e)
     })
   }
+
 } //creo una variabile con il modello già creato e dopo aver modificato il core di angular (primo import modifico la variabile)

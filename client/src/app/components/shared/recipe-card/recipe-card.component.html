@@ -11,7 +11,10 @@
 
       <a *ngIf="page==='home'" class="btn btn-primary" routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}">Dettaglio</a>
     </div>
-   <button (click)='this.onSubmit()'>Rimuovi</button>
+    <div class="div-button">
+    <button class="btn btn-primary" routerLink='aggiorna/{{recipe._id}}'>Aggiorna</button>
+    <button class="btn btn-primary" (click)='this.onSubmit()'>Rimuovi</button>
+   </div>
   </div>
 </div>
 

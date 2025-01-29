@@ -31,3 +31,18 @@
   font-size: 16px;
   color: $primary-color-1;
 }
+
+button {
+  height:fit-content;
+  font-size: 10px;
+  flex-wrap: wrap;
+}
+
+
+.div-button{
+  display: flex;            /* Imposta il layout come flexbox */
+  flex-wrap: wrap;        /* Impedisce che le card vadano su più righe */
+  gap: 16px;                /* Spazio tra le card */
+  justify-content: right;
+  align-content: center;
+}

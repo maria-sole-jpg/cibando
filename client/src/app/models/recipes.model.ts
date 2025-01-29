@@ -10,5 +10,5 @@ export interface Recipe{
   createdAt?: string;
   published: boolean;
   //note?:string; attributo opzionale
-  
+
 }

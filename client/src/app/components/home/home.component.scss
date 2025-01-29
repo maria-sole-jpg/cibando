@@ -1,17 +1,20 @@
-.container-title{
-  h1{
-   font-size:35px;
-   font-family: 'Courier-new', Courier, monospace;
-   color:coral;
+.container-title {
+  h1 {
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
   }
   p {
-   font-size: 11px;
-   color: gray;
-   font-weight: 200;
+    font-size: 11px;
+    color: gray;
+    font-weight: 200;
   }
- }
-
+}
 .testoEvidenziato {
   background-color: yellow;
+  width: 450px;
+}
+.testoNonEvidenziato {
+  background-color: rgb(255, 255, 255);
   width: 450px;
 }
